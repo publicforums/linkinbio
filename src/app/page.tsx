@@ -1,10 +1,12 @@
 import Hero from "@/components/Hero";
 import InfoSection from "@/components/InfoSection";
 import SocialLinks from "@/components/SocialLinks";
+import Loader from "@/components/Loader";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center pb-16">
+      <Loader />
       <Hero />
       <InfoSection />
       <SocialLinks />
