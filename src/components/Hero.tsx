@@ -1,16 +1,14 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 
 export default function Hero() {
   return (
     <section className="relative w-full">
       {/* Banner */}
-      <div className="relative h-[240px] sm:h-[280px] w-full animate-fade-in">
-        <Image
+      <div className="relative h-[240px] sm:h-[280px] w-full animate-fade-in overflow-hidden">
+        <img
           src="/banner.png"
           alt="Banner"
-          fill
-          className="object-cover"
-          priority
+          className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="banner-overlay absolute inset-0" />
       </div>
@@ -19,13 +17,11 @@ export default function Hero() {
       <div className="relative -mt-16 flex flex-col items-center px-6">
         {/* Profile picture */}
         <div className="animate-scale-in delay-200">
-          <div className="relative h-[120px] w-[120px] rounded-full border-[3px] border-accent/40 pfp-glow">
-            <Image
+          <div className="relative h-[120px] w-[120px] rounded-full border-[3px] border-accent/40 pfp-glow overflow-hidden">
+            <img
               src="/pfp.png"
               alt="Profile"
-              fill
-              className="rounded-full object-cover"
-              priority
+              className="h-full w-full rounded-full object-cover"
             />
           </div>
         </div>
