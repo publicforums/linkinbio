@@ -159,6 +159,80 @@ body {
   );
 }
 
+/* Loader — chasing squares */
+.loader {
+  --loader-size: 48px;
+  position: relative;
+  width: var(--loader-size);
+  height: var(--loader-size);
+  animation: loaderRotate 2000ms ease-in-out infinite;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+.loader-square {
+  position: absolute;
+  width: 45%;
+  height: 45%;
+  background-color: rgba(80, 80, 58, 0.9);
+  transform-origin: center;
+  animation: squareAnim 4000ms cubic-bezier(1, 0, 0, 1) infinite,
+    squareBlink 1000ms ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(80, 80, 58, 0.6), 0 0 24px rgba(80, 80, 58, 0.3);
+}
+
+.loader-square:nth-of-type(2) {
+  background-color: rgba(100, 100, 72, 0.9);
+  box-shadow: 0 0 8px rgba(100, 100, 72, 0.6), 0 0 24px rgba(100, 100, 72, 0.3);
+  animation-delay: -1000ms, -75ms;
+}
+
+.loader-square:nth-of-type(3) {
+  background-color: rgba(60, 60, 44, 0.9);
+  box-shadow: 0 0 8px rgba(60, 60, 44, 0.6), 0 0 24px rgba(60, 60, 44, 0.3);
+  animation-delay: -2000ms, -150ms;
+}
+
+.loader-square:nth-of-type(4) {
+  background-color: rgba(120, 120, 86, 0.9);
+  box-shadow: 0 0 8px rgba(120, 120, 86, 0.6), 0 0 24px rgba(120, 120, 86, 0.3);
+  animation-delay: -3000ms, -225ms;
+}
+
+@keyframes squareAnim {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(120%, 0); }
+  50% { transform: translate(120%, 120%); }
+  75% { transform: translate(0, 120%); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes squareBlink {
+  0% { filter: brightness(110%); }
+  20% { filter: brightness(110%); }
+  50% { filter: brightness(80%); }
+  80% { filter: brightness(110%); }
+  100% { filter: brightness(110%); }
+}
+
+@keyframes loaderRotate {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.7); }
+  100% { transform: scale(1); }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 4px;
