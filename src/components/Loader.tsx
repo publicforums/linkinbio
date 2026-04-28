@@ -7,10 +7,10 @@ export default function Loader() {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setFadeOut(true), 1400);
-    const removeTimer = setTimeout(() => setHidden(true), 2000);
+    const fadeTimer = setTimeout(() => setFadeOut(true), 3000);
+    const removeTimer = setTimeout(() => setHidden(true), 3600);
     return () => {
-      clearTimeout(timer);
+      clearTimeout(fadeTimer);
       clearTimeout(removeTimer);
     };
   }, []);
@@ -19,7 +19,7 @@ export default function Loader() {
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-500 ${
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-600 ${
         fadeOut ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >

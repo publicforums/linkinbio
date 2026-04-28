@@ -87,32 +87,35 @@ body {
 
 .animate-fade-up {
   animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 2800ms;
   opacity: 0;
 }
 
 .animate-fade-in {
   animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 2800ms;
   opacity: 0;
 }
 
 .animate-scale-in {
   animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 2800ms;
   opacity: 0;
 }
 
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
-.delay-600 { animation-delay: 600ms; }
-.delay-700 { animation-delay: 700ms; }
-.delay-800 { animation-delay: 800ms; }
+.delay-100 { animation-delay: 2900ms; }
+.delay-200 { animation-delay: 3000ms; }
+.delay-300 { animation-delay: 3100ms; }
+.delay-400 { animation-delay: 3200ms; }
+.delay-500 { animation-delay: 3300ms; }
+.delay-600 { animation-delay: 3400ms; }
+.delay-700 { animation-delay: 3500ms; }
+.delay-800 { animation-delay: 3600ms; }
 
 /* Profile picture glow */
 .pfp-glow {
   box-shadow: 0 0 20px rgba(50, 50, 36, 0.4), 0 0 40px rgba(50, 50, 36, 0.15);
-  animation: pulse-glow 4s ease-in-out infinite;
+  animation: pulse-glow 4s ease-in-out 3s infinite;
 }
 
 /* Link card hover effect */
